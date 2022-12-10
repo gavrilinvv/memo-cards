@@ -698,14 +698,14 @@ body {
 	display: block;
 	@include fluid('margin-bottom', 10px);
 
-	&_wrap {
-		filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
-	}
+	// &_wrap {
+	// 	filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
+	// }
 
 	&:hover {
 		clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 		background-color: #f5d000;
-		filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
+		// filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
 		// animation: 1s cartoon infinite step-end;
 	}
 	// &:active {
