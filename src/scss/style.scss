@@ -679,21 +679,18 @@ body {
 }
 
 .button {
-	// clip-path: polygon(0 40%,7% 0,70% 0,96% 10%,100% 92%,98% 100%,10% 100%,0 90%,0 10%);
 	clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
 	@include fluid('padding-top', 12px);
 	@include fluid('padding-bottom', 12px);
 	@include fluid('padding-right', 24px, 22px);
 	@include fluid('padding-left', 24px, 22px);
 	@include fluid('font-size', 32px, 24px);
-	// @include fluid('border-radius', 12px);
 	text-decoration: none;
 	color: black;
 	transition: .2s;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: bold;
-	// background-image: url('/img/wood.jpg');
 	background-color: #ffe33e;
 	background-size: cover;
 	user-select: none;
@@ -701,13 +698,14 @@ body {
 	display: block;
 	@include fluid('margin-bottom', 10px);
 
-	&_wrap {
-		filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
-	}
+	// &_wrap {
+	// 	filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
+	// }
 
 	&:hover {
 		clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 		background-color: #f5d000;
+		filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
 		// animation: 1s cartoon infinite step-end;
 	}
 	// &:active {
