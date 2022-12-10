@@ -7,7 +7,7 @@
 		<link rel="canonical" href="https://memo-cards.ru"/>
 		<title>Memo-cards | игра для тренировки памяти</title>
 		<link rel="stylesheet" href="/dest/css/style.css?<?=date('Hdmy')?>">
-		<meta property="og:title" content="Memo-cards | игра для тренировки памяти"/>
+		<meta property="og:title" content="Memo-cards | Игры для тренировки памяти"/>
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://memo-cards.ru" />
 		<meta name="description" content="Тренируйте память играя в такие простые игры как найти пару и повторить путь. Онлайн, бесплатно и без регистрации" />
