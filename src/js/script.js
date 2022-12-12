@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	// elements
-	const countdown = document.querySelector('.countdown');
+	// const countdown = document.querySelector('.countdown');
+	// const countdownArrow = document.querySelector('.countdown__arrow');
 	const lifeCounter = document.querySelector('.life-counter');
 
 	//btns
@@ -111,11 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		lifes = 3;
 		area.classList.remove('area-hide');
 		lifeCounter.innerHTML = lifes;
-		countdown.classList.remove('_hidden');
+		// countdown.classList.remove('_hidden');
 
-		document.querySelector('.countdown__light-1').style.visibility = 'hidden';
-		document.querySelector('.countdown__light-2').style.visibility = 'hidden';
-		document.querySelector('.countdown__light-3').style.visibility = 'hidden';
+		// document.querySelector('.countdown__light-1').style.visibility = 'hidden';
+		// document.querySelector('.countdown__light-2').style.visibility = 'hidden';
+		// document.querySelector('.countdown__light-3').style.visibility = 'hidden';
 
 		repeatData.mode = mode;
 		repeatData.game = 'pair';
@@ -128,9 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		let gridRows = mode.split('x')[0];
 		let gridCols = mode.split('x')[1];
 
-		btnToMainPage.forEach(btn => btn.classList.add('_hidden'));
+		// btnToMainPage.forEach(btn => btn.classList.add('_hidden'));
 		showScreen(playground);
-		startCountdown(3);
+		// startCountdown(3);
 
 		generateGrid(gridRows, gridCols);
 		fillingGridPair(gridRows, gridCols);
@@ -158,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let gridRows = mode.split('x')[0];
 		let gridCols = mode.split('x')[1];
 
-		countdown.classList.add('_hidden');
+		// countdown.classList.add('_hidden');
 		btnToMainPage.forEach(btn => btn.classList.remove('_hidden'));
 		showScreen(playground);
 
@@ -354,24 +355,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	// функции для игры НАЙДИ ПАРУ
-	function startCountdown(i) {
-		i = i-1;
-		let elem = document.querySelector('.countdown__light-3');
-		elem.style.visibility = 'visible';
-		var int = setInterval(() => {
-			let elem = document.querySelector('.countdown__light-' + i);
-			elem.style.visibility = 'visible';
-			if (i === 1) {
-				clearInterval(int);
-				setTimeout(() => {
-					countdown.classList.add('_hidden');
-					lifeCounter.classList.remove('_hidden');
-					btnToMainPage.forEach(btn => btn.classList.remove('_hidden'));
-				}, 800)
-			}
-			i--;
-		}, 1000);
-	}
+	// function startCountdown(i) {
+	// 	i = i-1;
+	// 	let elem = document.querySelector('.countdown__light-3');
+	// 	elem.style.visibility = 'visible';
+	// 	var int = setInterval(() => {
+	// 		let elem = document.querySelector('.countdown__light-' + i);
+	// 		elem.style.visibility = 'visible';
+	// 		if (i === 1) {
+	// 			clearInterval(int);
+	// 			setTimeout(() => {
+	// 				countdown.classList.add('_hidden');
+	// 				lifeCounter.classList.remove('_hidden');
+	// 				btnToMainPage.forEach(btn => btn.classList.remove('_hidden'));
+	// 			}, 800)
+	// 		}
+	// 		i--;
+	// 	}, 1000);
+	// }
 
 	// заполнение сетки карточкам для игры НАЙДИ ПАРУ
 	function fillingGridPair(gridRows, gridCols) {

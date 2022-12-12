@@ -359,11 +359,11 @@ body {
 }
 
 .life-counter {
-	// position: absolute;
+	position: absolute;
 	color: #fff;
 	@include fluid('font-size', 36px, 28px);
-	// @include fluid('top', 10px);
-	// @include fluid('right', 10px);
+	@include fluid('top', 10px);
+	@include fluid('right', 10px);
 	background-image: url('/img/life.png');
 	background-size: contain;
     background-repeat: no-repeat;
@@ -448,70 +448,38 @@ body {
 	}
   }
 
+// .countdown {
+// 	display: inline-block;
+//     position: absolute;
+// 	@include fluid('top', 10px);
+//     left: 50%;
+//     transform: translate(-50%, 0);
+// 	@include fluid('width', 60px);
+// 	@include fluid('height', 60px);
+// 	box-sizing: border-box;
 
-.countdown {
-	// @include fluid('font-size', 152px, 126px);
-	// opacity: .8;
-	// color: red;
-	// text-shadow: 6px 6px 10px #000;
-	// font-weight: bold;
-	// position: absolute;
-	// top: 50%;
-	// left: 50%;
-	// transform: translate(-50%, -50%);
-	// z-index: 2;
+// 	border-radius: 50px;
+// 	border: 2px solid black;
 
-	display: inline-block;
-    position: absolute;
-	@include fluid('top', 10px);
-    left: 50%;
-    transform: translate(-50%, 0);
-	@include fluid('width', 400px);
-	@include fluid('border-radius', 12px);
-	@include fluid('padding-top', 22px, 18px);
-	@include fluid('padding-bottom', 22px, 18px);
-	@include fluid('padding-right', 22px, 18px);
-	@include fluid('padding-left', 22px, 18px);
-	box-sizing: border-box;
-	background-image: url('/img/card-bg.jpg');
-	filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+// 	&__arrow {
+// 		position: absolute;
+// 		transform-origin: bottom;
+// 		@include fluid('left', 28px);
+// 		top: -2px;
+// 		background: black;
+// 		@include fluid('width', 2px);
+// 		@include fluid('height', 30px);
+// 		transform: rotate(0deg);
+// 		transition: 3s;
+// 		transition-timing-function: linear;
 
-	@include mobile {
-		width: 60%;
-	}
-
-	&__container {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	&__light {
-		@include fluid('height', 100px, 40px);
-		@include fluid('width', 100px, 40px);
-		border-radius: 50%;
-		visibility: hidden;
-		background-image: url('/img/kraft.jpg');
-
-		&-1 {
-			background-color: $green;
-			filter: hue-rotate(75deg) saturate(200%) drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
-			transform: rotate(160deg);
-			background-size: auto;
-		}
-		&-2 {
-			background-color: yellow;
-			filter: hue-rotate(0deg) saturate(200%) drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
-			background-size: auto;
-		}
-		&-3 {
-			background-color: red;
-			filter: hue-rotate(320deg) saturate(200%) drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
-			transform: rotate(60deg);
-			background-size: cover;
-		}
-	}
-
-}
+// 		&-finish {
+// 			transform: rotate(360deg);
+// 			transition: 3s;
+// 			transition-timing-function: linear;
+// 		}
+// 	}
+// }
 
 .area {
 	position: absolute;
