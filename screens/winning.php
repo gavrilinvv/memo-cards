@@ -5,7 +5,7 @@
 		</div>
 
 		<div class="button_wrap _mb-16">
-			<div class="button js-to-try-again">Попробовать снова</div>
+			<div class="button js-to-try-again">Играть снова</div>
 		</div>
 
 		<div class="button_wrap">
