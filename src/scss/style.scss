@@ -96,13 +96,19 @@ $gap-size-mobile: 12px;
 	font-family: 'Acme', sans-serif;
 }
 
+body {
+	background-color: #6dcaca;
+	background-image: url('/img/bg.png');
+	padding: 0;
+    margin: 0;
+}
+
 #app {
 	padding: 0;
 	margin: 0;
 	display: flex;
     flex-direction: column;
-    height: 100vh;
-	box-sizing: border-box;
+    height: 90vh;
 }
 
 .main {
@@ -119,15 +125,6 @@ $gap-size-mobile: 12px;
 	@include mobile {
 		min-width: 100%;
 	}
-}
-
-body {
-	background-color: #6dcaca;
-	background-image: url('/img/bg.png');
-	padding: 0;
-    margin: 0;
-	height: 100vh;
-	box-sizing: border-box;
 }
 
 ._hidden {
