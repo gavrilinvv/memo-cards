@@ -92,14 +92,6 @@
 					})
 				})
 
-				// bottom new
-				window.yaContextCb.push(()=>{
-					Ya.Context.AdvManager.render({
-						type: 'floorAd',
-						blockId: 'R-A-2090765-4'
-					})
-				})
-
 				setTimeout(function(){
 					renderAds();
 				}, 60000);
