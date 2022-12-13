@@ -62,7 +62,7 @@
 				<div class="banner-right" id="yandex_rtb_R-A-2090765-3"></div>
 			</div>
 
-			<div class="banner-bottom" id="yandex_rtb_R-A-2090765-1"></div>
+			<!-- <div class="banner-bottom" id="yandex_rtb_R-A-2090765-1"></div> -->
 
 		</div>
 
@@ -85,10 +85,18 @@
 					})
 				})
 				// bottom
+				// window.yaContextCb.push(()=>{
+				// 	Ya.Context.AdvManager.render({
+				// 		renderTo: 'yandex_rtb_R-A-2090765-1',
+				// 		blockId: 'R-A-2090765-1'
+				// 	})
+				// })
+
+				// bottom new
 				window.yaContextCb.push(()=>{
 					Ya.Context.AdvManager.render({
-						renderTo: 'yandex_rtb_R-A-2090765-1',
-						blockId: 'R-A-2090765-1'
+						type: 'floorAd',
+						blockId: 'R-A-2090765-4'
 					})
 				})
 
