@@ -105,12 +105,12 @@ $gap-size-mobile: 12px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	height: 90vh;
 }
 
 .content {
 	@include fluid('min-width', 600px);
 	@include fluid('max-width', 1208px);
-	height: 90vh;
 
 	@include mobile {
 		min-width: 100%;
