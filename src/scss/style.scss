@@ -116,6 +116,10 @@ body {
 	justify-content: space-around;
 	align-items: center;
 	height: 90vh;
+
+	@include mobile {
+		height: 80vh;
+	}
 }
 
 .content {
