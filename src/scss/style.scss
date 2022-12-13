@@ -97,13 +97,8 @@ $gap-size-mobile: 12px;
 }
 
 #app {
-	height: 100vh;
 	padding: 0;
 	margin: 0;
-
-	@include mobile {
-		height: 80vh;
-	}
 }
 
 .main {
