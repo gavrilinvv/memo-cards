@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="logo">
 			<div class="logo-title">MEMO-CARDS</div>
-			<div class="logo-subtitle">игры для тренировки памяти</div>
+			<h1 class="logo-subtitle">игры для тренировки памяти</h1>
 		</div>
 		<div class="button_wrap _mb-16">
 			<div class="button js-to-modes">Играть</div>

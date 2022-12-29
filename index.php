@@ -12,7 +12,7 @@
 		<meta property="og:url" content="https://memo-cards.ru" />
 		<meta name="description" content="Тренируйте память играя в такие простые игры как найти пару и повторить путь. Онлайн, бесплатно и без регистрации" />
 		<meta property="og:description" content="Тренируйте память играя в такие простые игры как найти пару и повторить путь. Онлайн, бесплатно и без регистрации" />
-		<meta name="keywords" content="тренировка памяти, игра, карточки, найти пару, повторить путь" />
+		<meta name="keywords" content="тренировка памяти, игра, карточки, найти пару, повторить путь, тренировка мозга" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

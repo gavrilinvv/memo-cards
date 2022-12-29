@@ -10,11 +10,11 @@
 		</div>
 
 		<div class="button_wrap _mb-16">
-			<div class="button js-to-pair-menu">Найди пару</div>
+			<h2 class="button js-to-pair-menu">Найди пару</h2>
 		</div>
 
 		<div class="button_wrap">
-			<div class="button js-to-sequence-menu">Повтори путь</div>
+			<h2 class="button js-to-sequence-menu">Повтори путь</h2>
 		</div>
 	</div>
 </div>
