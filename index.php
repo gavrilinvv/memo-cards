@@ -10,6 +10,8 @@
 		<meta property="og:title" content="Memo-cards | Игры для тренировки памяти"/>
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://memo-cards.ru" />
+		<link rel="preload" href="/fonts/Acme-Regular.ttf" as="font" crossorigin="anonymous" />
+		<link rel="preload" href="/fonts/RubikMonoOne-Regular.ttf" as="font" crossorigin="anonymous" />
 		<meta name="description" content="Тренируйте память играя в такие простые игры как найти пару и повторить путь. Онлайн, бесплатно и без регистрации" />
 		<meta property="og:description" content="Тренируйте память играя в такие простые игры как найти пару и повторить путь. Онлайн, бесплатно и без регистрации" />
 		<meta name="keywords" content="тренировка памяти, игра, карточки, найти пару, повторить путь, тренировка мозга" />
