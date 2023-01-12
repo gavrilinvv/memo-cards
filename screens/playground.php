@@ -13,5 +13,6 @@
 			<div class="countdown__light countdown__light-1"></div>
 		</div> -->
 	</div>
+	<div class="action-word"></div>
 	<div class="area"></div>
 </div>

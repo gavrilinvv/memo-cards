@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const area = document.querySelector('.area');
+	const app = document.querySelector('#app');
 
 	// screens
 	const startMenu = document.querySelector('.start-menu');
@@ -11,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const winning = document.querySelector('.winning');
 	const otherGames = document.querySelector('.other-games');
 
-
 	// elements
 	// const countdown = document.querySelector('.countdown');
 	// const countdownArrow = document.querySelector('.countdown__arrow');
 	const lifeCounter = document.querySelector('.life-counter');
+	const actionWordBlock = document.querySelector('.action-word');
 
 	//btns
 	const btnToModes = document.querySelectorAll('.js-to-modes');
@@ -48,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		coords: '',
 		img: ''
 	};
+
+
 
 	function showScreen(targetScreen) {
 		screens.forEach(screen => screen.classList.add('_hidden'));
@@ -136,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		generateGrid(gridRows, gridCols);
 		fillingGridPair(gridRows, gridCols);
 		firstShow();
+		setActionWord('Запоминай');
 	}
 
 	// старт игры ПОВТОРИ ПУТЬ
@@ -170,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		cards.forEach(card => card.classList.add('_opened'))
 		startSequence();
+		setActionWord('Запоминай');
 	}
 
 
@@ -202,22 +207,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	function startSequence() {
 		let cells = [...document.querySelectorAll('.cell[data-coords]')]; // получаем все ячейки
 
-		shuffle(cells).forEach((cell, i) => {
-			setTimeout(() => {
-				cell.children[0].classList.add('_pathed');
-				sequence.push(cell.getAttribute('data-coords'))
-			}, 1000*i)
-		})
-
 		setTimeout(() => {
-			cells.forEach(cell => cell.children[0].classList.remove('_pathed'));
-			initEventsSequence()
-		}, (1000*cells.length)+500)
+			shuffle(cells).forEach((cell, i) => {
+				setTimeout(() => {
+					cell.children[0].classList.add('_pathed');
+					sequence.push(cell.getAttribute('data-coords'))
+				}, 1000*i)
+			})
+
+			setTimeout(() => {
+				cells.forEach(cell => cell.children[0].classList.remove('_pathed'));
+				initEventsSequence()
+			}, (1000*cells.length)+500)
+		}, 1000)
 	}
 
 	function initEventsSequence() {
 		let cells = [...document.querySelectorAll('.cell[data-coords]')]; // получаем все ячейки
 		let clickCounter = 0;
+		setActionWord('Повтори путь');
 
 		cells.forEach(cell => {
 			cell.addEventListener('click', function() {
@@ -319,6 +327,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		}, 1000);
 	}
 
+	function setActionWord(word) {
+		actionWordBlock.classList.add('action-word__hidden');
+		setTimeout(() => {
+			actionWordBlock.innerHTML = word;
+			actionWordBlock.classList.remove('action-word__hidden');
+		}, 100)
+	}
+
 
 
 
@@ -412,7 +428,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				card.classList.remove('_opened-deg');
 			})
 			initEventsPair();
+			setActionWord('Найди пары');
 		}, 3000)
+	}
+
+	// получение координаты центра элемента
+	function getCenterOfElement(elem) {
+		const rect = elem.getBoundingClientRect();
+		return {
+			left: rect.left + (rect.width / 2),
+			top: rect.top +(rect.height / 2)
+		};
 	}
 
 	function initEventsPair() {
@@ -421,6 +447,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		cards.forEach(card => {
 			card.addEventListener('click', function() {
 				this.classList.add('_opened-deg');
+
+				// burst
+				// 	.tune(getCenterOfElement(card))
+				// 	.setSpeed(3)
+				// 	.replay();
 
 				if (openedCardOne.coords === '' && openedCardOne.img === '') {
 					openedCardOne.coords = this.parentNode.getAttribute('data-coords');
@@ -436,10 +467,15 @@ document.addEventListener('DOMContentLoaded', () => {
 						return;
 					}
 					setTimeout(() => {
+						// карточки совпали
 						if ((openedCardOne.img === openedCardTwo.img) && (openedCardOne.coords !== openedCardTwo.coords)) {
 
 							openedCardOne.elem.classList.add('_finded');
-							openedCardTwo.elem.classList.add('_finded')
+							openedCardTwo.elem.classList.add('_finded');
+
+							[openedCardOne.elem, openedCardTwo.elem].forEach(x => {
+								hideEffectCard(x)
+							})
 
 							openedCardOne.coords = '';
 							openedCardOne.img = '';
@@ -472,6 +508,38 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			})
 		})
+	}
+
+
+	function hideEffectCard(card) {
+		class Star extends mojs.CustomShape {
+			getShape () {
+			  return '<path d="M5.51132201,34.7776271 L33.703781,32.8220808 L44.4592855,6.74813038 C45.4370587,4.30369752 47.7185293,3 50,3 C52.2814707,3 54.5629413,4.30369752 55.5407145,6.74813038 L66.296219,32.8220808 L94.488678,34.7776271 C99.7034681,35.1035515 101.984939,41.7850013 97.910884,45.2072073 L75.9109883,63.1330483 L82.5924381,90.3477341 C83.407249,94.4217888 80.4739296,97.6810326 77.0517236,97.6810326 C76.0739505,97.6810326 74.9332151,97.3551083 73.955442,96.7032595 L49.8370378,81.8737002 L26.044558,96.7032595 C25.0667849,97.3551083 23.9260495,97.6810326 22.9482764,97.6810326 C19.3631082,97.6810326 16.2668266,94.4217888 17.4075619,90.3477341 L23.9260495,63.2960105 L2.08911601,45.2072073 C-1.98493875,41.7850013 0.296531918,35.1035515 5.51132201,34.7776271 Z" />';
+			}
+		}
+		mojs.addShape( 'star', Star );
+
+		const burst = new mojs.Burst({
+			left: 0, top: 0,
+			radius:   { 6: 72 },
+			angle:    45,
+			children: {
+				shape:        'star',
+				radius:       72/2.2,
+				fill:         '#FD7932',
+				degreeShift:  'stagger(0,0)',
+				duration:     1300,
+				easing:       'quad.out',
+			},
+			onComplete() {
+				this.el.parentNode.removeChild(this.el);
+			}
+		});
+
+		burst
+			.tune(getCenterOfElement(card))
+			.setSpeed(3)
+			.replay();
 	}
 
 	function createPair(img) {

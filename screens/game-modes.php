@@ -9,7 +9,7 @@
 			<div class="text">Выберите режим:</div>
 		</div>
 
-		<div class="button_wrap _mb-16">
+		<div class="button_wrap">
 			<h2 class="button js-to-pair-menu">Найди пару</h2>
 		</div>
 
