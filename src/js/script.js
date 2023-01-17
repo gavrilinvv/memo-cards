@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const btnToModes = document.querySelectorAll('.js-to-modes');
 	const btnToMainPage = document.querySelectorAll('.js-to-mainpage');
 	const btnToTryAgain = document.querySelectorAll('.js-to-try-again');
+	const btnToChangeDifficulty = document.querySelectorAll('.js-to-change-difficulty');
 
 	const btnToPairMenu = document.querySelector('.js-to-pair-menu');
 	const btnToSequenceMenu = document.querySelector('.js-to-sequence-menu');
@@ -70,9 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			// определяем игру и режим, запускаем ту же игру в том же режиме
 			let mode = e.target.getAttribute('data-mode');
 			let game = e.target.getAttribute('data-game');
-			console.log(mode, game);
 			if (game === 'pair')		startPairGame(mode);
 			if (game === 'sequence')	startSequenceGame(mode);
+
+		})
+	})
+
+	btnToChangeDifficulty.forEach(btn => {
+		btn.addEventListener('click', e => {
+			// определяем игру, открываем опции этой игры
+			let game = e.target.getAttribute('data-game');
+			if (game === 'pair')		showScreen(pairMenu);
+			if (game === 'sequence')	showScreen(sequenceMenu);
 
 		})
 	})
@@ -129,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			btn.setAttribute('data-game', repeatData.game);
 		})
 
+		// проставляем название игры для кнопки "сменить сетку"
+		btnToChangeDifficulty.forEach(btn => {
+			btn.setAttribute('data-game', repeatData.game);
+		})
+
 		let gridRows = mode.split('x')[0];
 		let gridCols = mode.split('x')[1];
 
@@ -157,6 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		// проставляем режим для кнопки "попробовать снова"
 		btnToTryAgain.forEach(btn => {
 			btn.setAttribute('data-mode', repeatData.mode);
+			btn.setAttribute('data-game', repeatData.game);
+		})
+
+		// проставляем название игры для кнопки "сменить сетку"
+		btnToChangeDifficulty.forEach(btn => {
 			btn.setAttribute('data-game', repeatData.game);
 		})
 
@@ -552,4 +572,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		return res;
 	}
+
+
+
+
+
+
+
+
+
 })
