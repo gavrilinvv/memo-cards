@@ -80,7 +80,6 @@ $gap-size-mobile: 12px;
 // 	font-display: swap;
 // 	src: url('/fonts/OpenSans-Regular.ttf');
 // }
-
 // @font-face {
 // 	font-family: 'AmaticSC';
 // 	font-display: swap;
@@ -694,7 +693,7 @@ body {
 }
 
 .button {
-	clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+	// clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
 	@include fluid('padding-top', 12px);
 	@include fluid('padding-bottom', 12px);
 	@include fluid('padding-right', 24px, 22px);
@@ -704,6 +703,7 @@ body {
 	color: black;
 	transition: .2s;
 	cursor: pointer;
+	overflow: visible;
 	display: inline-block;
 	font-weight: bold;
 	background-color: $yellow;
@@ -717,16 +717,26 @@ body {
 	// 	filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
 	// }
 
-	&:hover {
-		clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-		background-color: #e8b920;
-		// filter: drop-shadow(6px 6px 0px rgba(0,0,0,.5))
-		// animation: 1s cartoon infinite step-end;
-	}
-	// &:active {
-	// 	clip-path: polygon(0 98%,0 14%,23% 2%, 82% 10%, 90% 21%,110% 92%,98% 80%,13% 90%,5% 60%,0 53%);
-	// 	// transition: .2s;
+	// &:hover {
+	// 	clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+	// 	background-color: #e8b920;
 	// }
+
+	&-new {
+		position: relative;
+		&:before {
+			content: 'new';
+			position: absolute;
+			background-color: #49ed48;
+			color: #333;
+			@include fluid('top', -10px, -6px);
+			@include fluid('right', -18px, -14px);
+			@include fluid('font-size', 16px, 12px);
+			@include fluid('padding-right', 8px);
+			@include fluid('padding-left', 8px);
+			@include fluid('border-radius', 6px);
+		}
+	}
 
 	&-back {
 		position: absolute;

@@ -9,7 +9,7 @@
 			<div class="button js-to-modes">Играть</div>
 		</div>
 		<div class="button_wrap">
-			<div class="button js-to-other-games">Другие игры</div>
+			<div class="button button-new js-to-other-games">Другие игры</div>
 		</div>
 	</div>
 </div>

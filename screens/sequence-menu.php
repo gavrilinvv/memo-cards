@@ -6,17 +6,17 @@
 	</div>
 	<div class="container">
 		<div class="_bg _mb-32">
-			<div class="text">Выберите количество:</div>
+			<div class="text">Выберите сложность:</div>
 		</div>
 
 		<div class="button_wrap _mb-16">
-			<div class="button js-to-sequence-game" data-mode="2x3">2x3</div>
+			<div class="button js-to-sequence-game" data-mode="2x3">Низкая</div>
 		</div>
 		<div class="button_wrap _mb-16">
-			<div class="button js-to-sequence-game" data-mode="3x3">3x3</div>
+			<div class="button js-to-sequence-game" data-mode="3x3">Средняя</div>
 		</div>
 		<div class="button_wrap">
-			<div class="button js-to-sequence-game" data-mode="3x4">3x4</div>
+			<div class="button js-to-sequence-game" data-mode="3x4">Высокая</div>
 		</div>
 	</div>
 </div>

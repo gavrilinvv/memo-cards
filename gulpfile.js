@@ -7,7 +7,7 @@ const gulp = require('gulp'),
 	watch = require('gulp-watch');
 
 gulp.task('js', () => {
-	return gulp.src('./src/js/*.js')
+	return gulp.src(['./src/js/vendor/*.js', './src/js/script.js'])
 		.pipe(babel({
 			presets: ['@babel/preset-env'],
 		}))
