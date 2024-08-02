@@ -161,17 +161,17 @@ body {
 	&-right {
 		@include fluid('width', 240px, 240px, true);
 		@include fluid('height', 400px, 400px, true);
-		background-color: #ac7f7f
+		// background-color: #ac7f7f
 	}
 	&-left {
 		@include fluid('width', 240px, 240px, true);
 		@include fluid('height', 400px, 400px, true);
-		background-color: #ac7f7f
+		// background-color: #ac7f7f
 	}
 	&-bottom {
 		@include fluid('width', 320px, 320px, true);
 		@include fluid('height', 50px, 50px, true);
-		background-color: #ac7f7f;
+		// background-color: #ac7f7f;
 		margin: 0 auto;
 	}
 }
